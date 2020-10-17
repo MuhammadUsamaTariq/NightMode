@@ -12,13 +12,13 @@ public class MainActivity extends AppCompatActivity {
     SharedPref sharedpref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
         sharedpref = new SharedPref(this);
         if(sharedpref.loadNightModeState()==true) {
             setTheme(R.style.darktheme);
         }
         else  setTheme(R.style.AppTheme);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
         myswitch = findViewById(R.id.nightMode);
         if (sharedpref.loadNightModeState()==true) {
             myswitch.setChecked(true);
